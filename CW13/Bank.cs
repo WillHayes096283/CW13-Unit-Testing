@@ -65,7 +65,7 @@ namespace BankAccountNS
 
             public void Credit(double amount)
             {
-                if (m_frozen)
+                if (m_frozen == true)
                 {
                     throw new Exception("Account frozen");
                 }

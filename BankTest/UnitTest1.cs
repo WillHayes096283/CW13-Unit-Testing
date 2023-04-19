@@ -65,5 +65,46 @@ namespace BankTest
             }
             Assert.Fail("No exception was thrown.");
         }
+
+
+        [TestMethod]
+        [ExpectedException(typeof(System.Exception))]
+        public void Credit_WhenAccountIsFrozen_ShouldThrowException()
+        {
+            double beginningBalance = 11.99;
+            double creditAmount = 100.00;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+            account.ToggleFreeze();
+
+            account.Credit(creditAmount);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Credit_WhenAmountIsNegative_ShouldThrowOutOfRangeException()
+        {
+            double beginningBalance = 11.99;
+            double creditAmount = -100.00;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+            account.Credit(creditAmount);
+        }
+
+
+        [TestMethod]
+        public void Credit_WithValidAmount_UpdatesBalance()
+        {
+            double beginningBalance = 11.99;
+            double creditAmount = 5.00;
+            BankAccount account = new BankAccount("Mr. Bryan Walton", beginningBalance);
+
+            account.Credit(creditAmount);
+
+            double actual = account.Balance;
+            double expected = 16.99;
+
+            Assert.AreEqual(expected, actual, 0.001, "Account not credited correctly");
+        }
     }
 }

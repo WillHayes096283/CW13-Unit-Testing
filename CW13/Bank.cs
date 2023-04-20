@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * @file: Bank.cs
+ * @date: 4/20/2023
+ * @author: William Hayes
+ * @brief: This implements the Credit() and Debit() methods.
+ * 
+ * This file contains the Credit() and Debit() methods used to test out
+ * unit tests.
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

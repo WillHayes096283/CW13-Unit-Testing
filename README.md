@@ -5,6 +5,8 @@
 ## Compiling Instructions
 Down the Visual Studio solution or press the open in Visual Studios button on GitHub.
 
+To see the tests, into UnitTest1.cs in the BankTest project, select Test in the top menu bar, and click on the run all tests button. Every unit test should pass, showing that the BankAccount class methods are behaving properly.
+
 ## Purpose
 The purpose of this program is to showcase the usage of unit tests in Visual Studios. This runs through 3 unit tests for the Credit() and Debit() methods of the BankAccount class.
 
